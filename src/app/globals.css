@@ -1,0 +1,150 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* ── Aurora / glass treatment used across the landing ── */
+
+.pl-aurora-bg {
+  background:
+    radial-gradient(90% 70% at 12% 0%, rgba(128, 8, 220, 0.32) 0%, rgba(128, 8, 220, 0) 55%),
+    radial-gradient(80% 60% at 88% 10%, rgba(12, 169, 166, 0.26) 0%, rgba(12, 169, 166, 0) 55%),
+    radial-gradient(80% 60% at 50% 100%, rgba(249, 138, 77, 0.22) 0%, rgba(249, 138, 77, 0) 55%),
+    linear-gradient(160deg, #120a26 0%, #1a0f36 45%, #16122e 100%);
+}
+
+.pl-aurora-bg-alt {
+  background:
+    radial-gradient(90% 70% at 85% 0%, rgba(12, 169, 166, 0.4) 0%, rgba(12, 169, 166, 0) 55%),
+    radial-gradient(80% 60% at 8% 100%, rgba(128, 8, 220, 0.24) 0%, rgba(128, 8, 220, 0) 55%),
+    linear-gradient(160deg, #0f1a2e 0%, #142238 45%, #10182c 100%);
+}
+
+.pl-aurora-bg-warm {
+  background:
+    radial-gradient(90% 70% at 20% 100%, rgba(249, 138, 77, 0.35) 0%, rgba(249, 138, 77, 0) 55%),
+    radial-gradient(80% 60% at 90% 0%, rgba(128, 8, 220, 0.26) 0%, rgba(128, 8, 220, 0) 55%),
+    linear-gradient(160deg, #1b0f35 0%, #2a1338 50%, #1a0f2c 100%);
+}
+
+.pl-grain {
+  position: relative;
+}
+.pl-grain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.05) 0px,
+    rgba(255, 255, 255, 0.05) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  mix-blend-mode: overlay;
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.pl-blob {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(70px);
+  pointer-events: none;
+}
+
+.pl-glass {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.pl-glass-light {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.pl-text-gradient {
+  background: linear-gradient(120deg, #ffffff 0%, #d9c7f5 45%, #0ca9a6 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.pl-text-gradient-brand {
+  background: linear-gradient(120deg, #8008dc 0%, #0ca9a6 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.pl-text-gradient-warm {
+  background: linear-gradient(120deg, #f98a4d 0%, #ffb17a 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.pl-btn-gradient {
+  background: linear-gradient(135deg, #8008dc 0%, #a020f0 45%, #0ca9a6 100%);
+  transition: filter 0.15s ease, transform 0.15s ease;
+}
+.pl-btn-gradient:hover {
+  filter: brightness(1.08);
+}
+
+.pl-glow-purple {
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08), 0 20px 60px -15px rgba(128, 8, 220, 0.55);
+}
+
+.pl-glow-soft {
+  box-shadow: 0 20px 50px -20px rgba(27, 15, 53, 0.35);
+}
+
+@keyframes pl-shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+.pl-shimmer {
+  animation: pl-shimmer 2.4s ease-in-out infinite;
+}
+
+@keyframes pl-float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+.pl-float {
+  animation: pl-float 5s ease-in-out infinite;
+}
+
+@keyframes pl-float-a {
+  0%, 100% { transform: translateY(0px) rotate(-1deg); }
+  50%      { transform: translateY(-14px) rotate(-1deg); }
+}
+.pl-float-a {
+  animation: pl-float-a 4.2s ease-in-out infinite;
+}
+
+@keyframes pl-float-b {
+  0%, 100% { transform: translateY(0px) rotate(1deg); }
+  50%      { transform: translateY(12px) rotate(1deg); }
+}
+.pl-float-b {
+  animation: pl-float-b 5.4s ease-in-out infinite;
+  animation-delay: 0.6s;
+}
+
+@keyframes pl-float-c {
+  0%, 100% { transform: translateY(0px) rotate(-0.5deg); }
+  50%      { transform: translateY(-9px) rotate(-0.5deg); }
+}
+.pl-float-c {
+  animation: pl-float-c 4.8s ease-in-out infinite;
+  animation-delay: 1.3s;
+}
