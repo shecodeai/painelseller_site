@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 
-const WEBHOOK_URL = process.env.LEADS_WEBHOOK_URL;
+const FORMSPREE_ENDPOINT = process.env.FORMSPREE_ENDPOINT;
 
 export async function POST(request: NextRequest) {
   const body = await request.json().catch(() => null);
@@ -18,29 +18,27 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ message: "E-mail inválido." }, { status: 400 });
   }
 
-  if (!WEBHOOK_URL) {
-    console.error("LEADS_WEBHOOK_URL não configurada — cadastro não foi salvo.");
+  if (!FORMSPREE_ENDPOINT) {
+    console.error("FORMSPREE_ENDPOINT não configurada — cadastro não foi salvo.");
     return NextResponse.json({ message: "Erro ao salvar cadastro." }, { status: 500 });
   }
 
-  const lead = {
-    data: new Date().toLocaleString("pt-BR", { timeZone: "America/Sao_Paulo" }),
-    nome,
-    email,
-    telefone: telefone || "—",
-    storeLink: storeLink || "—",
-    skuRange: skuRange || "—",
-  };
-
   try {
-    const res = await fetch(WEBHOOK_URL, {
+    const res = await fetch(FORMSPREE_ENDPOINT, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(lead),
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify({
+        Nome: nome,
+        "E-mail": email,
+        Telefone: telefone || "—",
+        "Link da loja": storeLink || "—",
+        "Faixa de SKUs": skuRange || "—",
+        _subject: `Novo lead do piloto — ${nome}`,
+      }),
     });
-    if (!res.ok) throw new Error(`Webhook respondeu ${res.status}`);
+    if (!res.ok) throw new Error(`Formspree respondeu ${res.status}`);
   } catch (err) {
-    console.error("Erro ao enviar lead para a planilha:", err);
+    console.error("Erro ao enviar lead para o Formspree:", err);
     return NextResponse.json({ message: "Erro ao salvar cadastro." }, { status: 500 });
   }
 

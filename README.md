@@ -5,7 +5,7 @@ Landing page pública de captação para o piloto gratuito do Painel Seller, vol
 ## Stack
 
 - Next.js 14 (App Router) + TypeScript + Tailwind CSS
-- Cadastro do piloto é enviado para uma planilha do Google via webhook (Google Apps Script)
+- Cadastro do piloto é enviado para o Formspree (painel + e-mail + export CSV)
 
 ## Comandos
 
@@ -21,12 +21,13 @@ Acesse `http://localhost:3000`.
 Crie um `.env.local` (veja `.env.example`):
 
 ```
-LEADS_WEBHOOK_URL=https://script.google.com/macros/s/SEU_ID/exec
+FORMSPREE_ENDPOINT=https://formspree.io/f/xxxxxxx
 ```
 
-Essa é a URL do Web App do Google Apps Script que recebe cada cadastro e grava
-uma linha na planilha do Google. Sem ela, o formulário retorna erro ao enviar.
-Em produção (Vercel), configure a mesma variável em Settings → Environment Variables.
+É o endpoint do formulário criado no Formspree. Cada cadastro é enviado pra lá e
+aparece no painel do Formspree + chega por e-mail. Sem essa variável, o
+formulário retorna erro ao enviar. Em produção (Vercel), configure a mesma
+variável em Settings → Environment Variables.
 
 ## Estrutura
 
