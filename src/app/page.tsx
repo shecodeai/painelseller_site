@@ -51,6 +51,9 @@ export const metadata: Metadata = {
   },
 };
 
+const DATE_PUBLISHED = "2026-08-11";
+const DATE_MODIFIED = new Date().toISOString().split("T")[0];
+
 const JSON_LD = {
   "@context": "https://schema.org",
   "@graph": [
@@ -60,6 +63,17 @@ const JSON_LD = {
       name: "Painel Seller Tecnologia LTDA",
       url: "https://painelseller.com.br",
       logo: "https://painelseller.com.br/images/piloto/tela-monitor.png",
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://painelseller.com.br/#webpage",
+      url: "https://painelseller.com.br",
+      name: TITLE,
+      description: DESCRIPTION,
+      inLanguage: "pt-BR",
+      datePublished: DATE_PUBLISHED,
+      dateModified: DATE_MODIFIED,
+      about: { "@id": "https://painelseller.com.br/#organization" },
     },
     {
       "@type": "SoftwareApplication",
