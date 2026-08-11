@@ -1,0 +1,32 @@
+# Painel Seller
+
+> Plataforma de performance para vendedores da Amazon Brasil. Mostra o lucro líquido real de cada produto — comissão, tarifa FBA, armazenagem, Ads e imposto cruzados com o custo, produto por produto, num painel só. Está captando vendedores para um piloto gratuito.
+
+O Painel Seller resolve uma dor concreta de quem vende em marketplace: entender o que realmente sobra depois que a venda acontece. Comissão, publicidade, logística e serviços chegam a consumir entre 35% e 40% do faturamento bruto, e a maioria dos vendedores não consegue ver isso de forma clara e consolidada.
+
+## Pra quem é
+- Vendedores com catálogo ativo na Amazon Brasil
+- Quem não sabe a margem real dos produtos
+- Quem quer clareza nas taxas antes de decidir preço
+
+## O que o painel responde
+- Como estão minhas vendas agora? (tempo real, sem planilha)
+- Quanto lucrei em cada pedido? (margem líquida já descontada)
+- Quanto a Amazon me pagou? (repasse líquido e quando cai)
+- O que devo comprar, quanto e quando? (previsão de ruptura)
+- Esse produto está me dando lucro? (classificação Campeão, Estável ou Em Queda)
+- Quanto estou gastando em Ads por produto? (saúde da campanha)
+- O que preciso fazer pra vender mais? (direcionamento baseado em dados)
+- Esse preço é competitivo antes de eu publicar? (simulação com cenário competitivo)
+
+## Quem constrói
+Parceria entre a She.codeAI (tecnologia) e a Agência Ainah. A plataforma é credenciada como Amazon SP-API Developer Partner e parceira certificada Tray. As recomendações nascem da metodologia de gestão de contas da Agência Ainah, credenciada no Amazon Service Provider Network (SPN) há mais de 6 anos; sua fundadora, Ainá, é mentora certificada pela Amazon.
+
+## Piloto
+- Gratuito, sem cartão de crédito
+- Vagas limitadas para vendedores com catálogo ativo na Amazon Brasil
+- 100% web, sem instalação
+- Conexão pela autorização oficial da Amazon (não pede login e senha da sua conta)
+
+## Links
+- [Site oficial](https://painelseller.com.br): landing do piloto, com formulário de cadastro
