@@ -5,7 +5,7 @@ Landing page pública de captação para o piloto gratuito do Painel Seller, vol
 ## Stack
 
 - Next.js 14 (App Router) + TypeScript + Tailwind CSS
-- Cadastro do piloto grava em planilha local (`data/leads-piloto.xlsx`) via `xlsx`
+- Cadastro do piloto é enviado para uma planilha do Google via webhook (Google Apps Script)
 
 ## Comandos
 
@@ -15,6 +15,18 @@ npm run dev
 ```
 
 Acesse `http://localhost:3000`.
+
+## Variáveis de ambiente
+
+Crie um `.env.local` (veja `.env.example`):
+
+```
+LEADS_WEBHOOK_URL=https://script.google.com/macros/s/SEU_ID/exec
+```
+
+Essa é a URL do Web App do Google Apps Script que recebe cada cadastro e grava
+uma linha na planilha do Google. Sem ela, o formulário retorna erro ao enviar.
+Em produção (Vercel), configure a mesma variável em Settings → Environment Variables.
 
 ## Estrutura
 

@@ -1,14 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
-import fs from "fs";
-import path from "path";
-import * as XLSX from "xlsx";
 
-const LEADS_DIR = path.join(process.cwd(), "data");
-const LEADS_FILE = path.join(LEADS_DIR, "leads-piloto.xlsx");
-const SHEET_NAME = "Leads";
-const COLUNAS = ["Data", "Nome", "E-mail", "Telefone", "Link da loja", "Faixa de SKUs"] as const;
-
-type Linha = Record<(typeof COLUNAS)[number], string>;
+const WEBHOOK_URL = process.env.LEADS_WEBHOOK_URL;
 
 export async function POST(request: NextRequest) {
   const body = await request.json().catch(() => null);
@@ -26,34 +18,29 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ message: "E-mail inválido." }, { status: 400 });
   }
 
-  const novaLinha: Linha = {
-    Data: new Date().toLocaleString("pt-BR"),
-    Nome: nome,
-    "E-mail": email,
-    Telefone: telefone || "—",
-    "Link da loja": storeLink || "—",
-    "Faixa de SKUs": skuRange || "—",
+  if (!WEBHOOK_URL) {
+    console.error("LEADS_WEBHOOK_URL não configurada — cadastro não foi salvo.");
+    return NextResponse.json({ message: "Erro ao salvar cadastro." }, { status: 500 });
+  }
+
+  const lead = {
+    data: new Date().toLocaleString("pt-BR", { timeZone: "America/Sao_Paulo" }),
+    nome,
+    email,
+    telefone: telefone || "—",
+    storeLink: storeLink || "—",
+    skuRange: skuRange || "—",
   };
 
   try {
-    fs.mkdirSync(LEADS_DIR, { recursive: true });
-
-    let linhas: Linha[] = [];
-    if (fs.existsSync(LEADS_FILE)) {
-      const wb = XLSX.readFile(LEADS_FILE);
-      const ws = wb.Sheets[SHEET_NAME];
-      if (ws) linhas = XLSX.utils.sheet_to_json<Linha>(ws);
-    }
-    linhas.push(novaLinha);
-
-    const ws = XLSX.utils.json_to_sheet(linhas, { header: [...COLUNAS] });
-    ws["!cols"] = [{ wch: 18 }, { wch: 28 }, { wch: 28 }, { wch: 16 }, { wch: 34 }, { wch: 16 }];
-
-    const wb = XLSX.utils.book_new();
-    XLSX.utils.book_append_sheet(wb, ws, SHEET_NAME);
-    XLSX.writeFile(wb, LEADS_FILE);
+    const res = await fetch(WEBHOOK_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(lead),
+    });
+    if (!res.ok) throw new Error(`Webhook respondeu ${res.status}`);
   } catch (err) {
-    console.error("Erro ao salvar lead do piloto:", err);
+    console.error("Erro ao enviar lead para a planilha:", err);
     return NextResponse.json({ message: "Erro ao salvar cadastro." }, { status: 500 });
   }
 
