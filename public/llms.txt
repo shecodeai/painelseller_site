@@ -29,4 +29,4 @@ Parceria entre a She.codeAI (tecnologia) e a Agência Ainah. A plataforma é cre
 - Conexão pela autorização oficial da Amazon (não pede login e senha da sua conta)
 
 ## Links
-- [Site oficial](https://painelseller.com.br): landing do piloto, com formulário de cadastro
+- [Site oficial](https://www.painelseller.com.br): landing do piloto, com formulário de cadastro

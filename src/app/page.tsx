@@ -15,7 +15,7 @@ import Footer from "@/components/piloto/Footer";
 const TITLE = "Painel Seller — Piloto gratuito para vendedores Amazon Brasil";
 const DESCRIPTION =
   "Comissão, tarifa FBA, armazenagem, Ads e imposto, cruzados com seu custo, produto por produto, num painel só. Piloto gratuito para vendedores com catálogo ativo na Amazon Brasil.";
-const URL = "https://painelseller.com.br";
+const URL = "https://www.painelseller.com.br";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -59,21 +59,21 @@ const JSON_LD = {
   "@graph": [
     {
       "@type": "Organization",
-      "@id": "https://painelseller.com.br/#organization",
+      "@id": "https://www.painelseller.com.br/#organization",
       name: "Painel Seller Tecnologia LTDA",
-      url: "https://painelseller.com.br",
-      logo: "https://painelseller.com.br/images/piloto/tela-monitor.png",
+      url: "https://www.painelseller.com.br",
+      logo: "https://www.painelseller.com.br/images/piloto/tela-monitor.png",
     },
     {
       "@type": "WebPage",
-      "@id": "https://painelseller.com.br/#webpage",
-      url: "https://painelseller.com.br",
+      "@id": "https://www.painelseller.com.br/#webpage",
+      url: "https://www.painelseller.com.br",
       name: TITLE,
       description: DESCRIPTION,
       inLanguage: "pt-BR",
       datePublished: DATE_PUBLISHED,
       dateModified: DATE_MODIFIED,
-      about: { "@id": "https://painelseller.com.br/#organization" },
+      about: { "@id": "https://www.painelseller.com.br/#organization" },
     },
     {
       "@type": "SoftwareApplication",
@@ -87,7 +87,7 @@ const JSON_LD = {
         priceCurrency: "BRL",
         description: "Piloto gratuito para vendedores Amazon Brasil com catálogo ativo",
       },
-      publisher: { "@id": "https://painelseller.com.br/#organization" },
+      publisher: { "@id": "https://www.painelseller.com.br/#organization" },
     },
     {
       "@type": "FAQPage",

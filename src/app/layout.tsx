@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://painelseller.com.br"),
+  metadataBase: new URL("https://www.painelseller.com.br"),
   title: "Painel Seller — Piloto gratuito para vendedores Amazon Brasil",
   description:
     "Comissão, tarifa FBA, armazenagem, Ads e imposto, cruzados com seu custo, produto por produto, num painel só.",

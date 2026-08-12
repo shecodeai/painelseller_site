@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: "/api/",
     },
-    sitemap: "https://painelseller.com.br/sitemap.xml",
+    sitemap: "https://www.painelseller.com.br/sitemap.xml",
   };
 }
