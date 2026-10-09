@@ -8,5 +8,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 1,
     },
+    {
+      url: "https://www.painelseller.com.br/privacidade",
+      lastModified: new Date("2026-10-09"),
+      changeFrequency: "yearly",
+      priority: 0.3,
+    },
   ];
 }
