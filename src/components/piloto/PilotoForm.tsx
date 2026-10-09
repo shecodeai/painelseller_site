@@ -124,6 +124,14 @@ export default function PilotoForm() {
       >
         {loading ? "Enviando..." : "Quero participar do piloto"}
       </button>
+
+      <p className="text-[11px] text-[#675E66] text-center leading-snug">
+        Ao enviar, você concorda com o tratamento dos seus dados conforme a{" "}
+        <a href="/privacidade" className="underline text-[#8008DC]">
+          Política de Privacidade
+        </a>
+        .
+      </p>
     </form>
   );
 }
