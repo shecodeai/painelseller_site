@@ -40,23 +40,18 @@ export default function PrivacidadePage() {
       </header>
 
       <main className="max-w-[820px] mx-auto px-6 py-12 sm:py-16 text-[#50484F] text-[15px] leading-relaxed">
-        <h1 className="text-3xl sm:text-4xl font-bold text-[#462073] mb-10">Política de Privacidade – Painel Seller</h1>
+        <h1 className="text-3xl sm:text-4xl font-bold text-[#462073] mb-2">Política de Privacidade</h1>
+        <p className="text-sm text-[#675E66] mb-10">Vigência desta versão: 01/10/2026</p>
 
         <Section title="1. Quem somos">
           <p>
-            <strong>Vigência desta versão: 1 de outubro de 2026</strong>
-          </p>
-          <p>
             O Painel Seller é operado pela Painel Seller Tecnologia LTDA, CNPJ 68.380.030/0001-04, com sede na Rua
-            Marquesa de Santos, 150, apto 501, São Paulo - SP, CEP 04269-040. Somos o controlador dos dados pessoais
+            Marquesa de Santos, 150, São Paulo - SP, CEP 04269-040. Somos o controlador dos dados pessoais
             descritos nesta política, nos termos da Lei Geral de Proteção de Dados (LGPD, Lei nº 13.709/2018).
           </p>
           <p>
             Esta política explica como tratamos dados pessoais no site e na plataforma Painel Seller. As regras de uso do
             serviço, planos e pagamentos estão nos nossos Termos de Uso.
-          </p>
-          <p>
-            <strong>Encarregado pelo tratamento de dados (DPO):</strong>
           </p>
           <p>
             Nos enquadramos como agente de tratamento de pequeno porte, nos termos da Resolução CD/ANPD nº 2/2022, e
@@ -195,11 +190,8 @@ export default function PrivacidadePage() {
           <PolicyTable
             headers={["Prestador", "Finalidade"]}
             rows={[
-              ["provedor de nuvem", "Hospedagem e banco de dados"],
-              ["Google (reCAPTCHA)", "Proteção contra bots no login e no cadastro"],
-              ["provedor de e-mail", "Envio de e-mails transacionais"],
-              ["provedor de formulários", "Formulários do site e do suporte"],
-              ["gateway de pagamento", "Processamento de pagamentos"],
+              ["Provedor de nuvem", "Hospedagem e banco de dados"],
+              ["Provedor de pagamento", "Processamento de pagamentos"],
             ]}
           />
           <p>
@@ -212,10 +204,10 @@ export default function PrivacidadePage() {
 
         <Section title="8. Transferência internacional">
           <p>
-            Alguns prestadores listados na seção 7, como o Google reCAPTCHA e o provedor de nuvem, podem tratar dados em
-            servidores fora do Brasil, incluindo os Estados Unidos. Essas transferências seguem o art. 33 da LGPD e a
-            Resolução CD/ANPD nº 19/2024, com cláusulas contratuais que garantem um nível de proteção compatível com a lei
-            brasileira.
+            Alguns prestadores, como o provedor de nuvem listado na seção 7 e o Google reCAPTCHA (seção 12), podem tratar
+            dados em servidores fora do Brasil, incluindo os Estados Unidos. Essas transferências seguem o art. 33 da LGPD
+            e a Resolução CD/ANPD nº 19/2024, com cláusulas contratuais que garantem um nível de proteção compatível com
+            a lei brasileira.
           </p>
         </Section>
 
