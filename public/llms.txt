@@ -20,7 +20,7 @@ O Painel Seller resolve uma dor concreta de quem vende em marketplace: entender 
 - Esse preço é competitivo antes de eu publicar? (simulação com cenário competitivo)
 
 ## Quem constrói
-Parceria entre a She.codeAI (tecnologia) e a Agência Ainah. A plataforma é credenciada como Amazon SP-API Developer Partner e parceira certificada Tray. As recomendações nascem da metodologia de gestão de contas da Agência Ainah, credenciada no Amazon Service Provider Network (SPN) há mais de 6 anos; sua fundadora, Ainá, é mentora certificada pela Amazon.
+Parceria entre a She.codeAI (tecnologia) e a Agência Ainah. As recomendações nascem da metodologia de gestão de contas da Agência Ainah.
 
 ## Piloto
 - Gratuito, sem cartão de crédito
