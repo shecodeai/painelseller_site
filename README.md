@@ -31,7 +31,7 @@ variável em Settings → Environment Variables.
 
 ## Estrutura
 
-- `src/app/page.tsx` — monta a landing (Hero, Dor, Pra quem é, Tour do produto, Credibilidade, Case real, FAQ, CTA final)
+- `src/app/page.tsx` — monta a landing (Hero, Dor, Pra quem é, Tour do produto, Case real, FAQ, CTA final)
 - `src/components/piloto/` — componentes da landing
 - `src/app/api/pilot-signup/` — endpoint que recebe o formulário de cadastro
 - `src/app/robots.ts`, `src/app/sitemap.ts`, `src/app/opengraph-image.tsx` — SEO

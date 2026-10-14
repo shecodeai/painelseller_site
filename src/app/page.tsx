@@ -2,11 +2,9 @@ import type { Metadata } from "next";
 import { PILOTO_FAQ } from "@/lib/pilotoFaq";
 import Nav from "@/components/piloto/Nav";
 import Hero from "@/components/piloto/Hero";
-import TrustBar from "@/components/piloto/TrustBar";
 import Dor from "@/components/piloto/Dor";
 import ParaQuem from "@/components/piloto/ParaQuem";
 import TourProduto from "@/components/piloto/TourProduto";
-import Credibilidade from "@/components/piloto/Credibilidade";
 import CaseReal from "@/components/piloto/CaseReal";
 import Faq from "@/components/piloto/Faq";
 import CtaFinal from "@/components/piloto/CtaFinal";
@@ -113,11 +111,9 @@ export default function PilotoPage() {
       />
       <Nav />
       <Hero />
-      <TrustBar />
       <Dor />
       <ParaQuem />
       <TourProduto />
-      <Credibilidade />
       <CaseReal />
       <Faq />
       <CtaFinal />
